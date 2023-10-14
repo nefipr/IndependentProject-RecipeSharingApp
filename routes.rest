@@ -7,3 +7,36 @@ http://localhost:8080/....
 http://localhost:8080/....
 
 
+### POST Create Contact 
+POST http://localhost:8080/contacts HTTP/1.1
+content-Type: application/json
+
+{
+    "firstName": "Neymar",
+    "lastName": "Galo",
+    "email": "neygalo@gmail.com",
+    "favoriteColor": "Yellow",
+    "birthday": "09/12/1970"
+}
+
+// PRODUCTION Deploy 
+
+### GET 
+http://localhost:8080/recipes 
+### GET 
+http://localhost:8080/....
+### GET 
+http://localhost:8080/....
+
+
+### POST Create Contact 
+POST http://localhost:8080/contacts HTTP/1.1
+content-Type: application/json
+
+{
+    "firstName": "Neymar",
+    "lastName": "Galo",
+    "email": "neygalo@gmail.com",
+    "favoriteColor": "Yellow",
+    "birthday": "09/12/1970"
+}
