@@ -15,12 +15,28 @@ POST http://localhost:8080/recipes HTTP/1.1
 content-Type: application/json
 
 {
-  "dish name": "",
-  "prep time": "",
-  "cook time": "",
-  "yield": "",
-  "meal type": ""
+  "dishName": "Steak Tacos",
+  "prepTime": "10 min",
+  "cookTime": "20 min",
+  "yield": "12 tacos",
+  "mealType": "Main Dish"
 }
+
+### PUT Update Contact 
+PUT http://localhost:8080/recipes/652af99dd08ad515db13a276 HTTP/1.1
+content-Type: application/json
+
+{
+  "dishName": "",
+  "prepTime": "",
+  "cookTime": "",
+  "yield": "",
+  "mealType": ""
+}
+
+### DELETE Update Contact 
+DELETE http://localhost:8080/recipes/652af99dd08ad515db13a276 HTTP/1.1
+
 
 // PRODUCTION Deploy 
 
@@ -39,9 +55,24 @@ POST https://recipe-builder-app.onrender.com/recipes HTTP/1.1
 content-Type: application/json
 
 {
-  "dish name": "",
-  "prep time": "",
-  "cook time": "",
-  "yield": "",
-  "meal type": ""
+  "dishName": "Flan",
+  "prepTime": "15 min",
+  "cookTime": "50 min",
+  "yield": "12 servings",
+  "mealType": "Desserts"
 }
+
+### PUT Update Contact 
+PUT https://recipe-builder-app.onrender.com/recipes/652af99dd08ad515db13a276 HTTP/1.1
+content-Type: application/json
+
+{
+  "dishName": "",
+  "prepTime": "",
+  "cookTime": "",
+  "yield": "",
+  "mealType": ""
+}
+
+### DELETE Update Contact 
+DELETE https://recipe-builder-app.onrender.com/recipes/652af99dd08ad515db13a276 HTTP/1.1

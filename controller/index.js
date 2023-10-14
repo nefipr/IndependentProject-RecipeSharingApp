@@ -34,18 +34,18 @@ const getSingle = async (req, res, next) => {
 
 const createNewRecipe = async(req, res) => {
   try{
-    const newContact = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      favoriteColor: req.body.favoriteColor,
-      birthday: req.body.birthday
+    const newRecipe = {
+      dishName: req.body.dishName,
+      prepTime: req.body.prepTime,
+      cookTime: req.body.cookTime,
+      yield: req.body.yield,
+      mealType: req.body.mealType
     };
     const result = await mongodb
     .getDb()
-    .db()
+    .db('Recipes')
     .collection('recipes')
-    .insertOne(newContact);
+    .insertOne(newRecipe);
   
     if (result.acknowledged){
       res.status(201).json(result);
