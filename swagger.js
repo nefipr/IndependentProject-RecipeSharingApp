@@ -5,9 +5,10 @@ const doc = {
     title: 'My API',
     description: 'Personal Assignment',
   },
-  host: 'cse341-personalnefipr.onrender.com',
+  host: 'recipe-builder-app.onrender.com',
   schemes: ['https']
 };
+
 
 const outputFile = './swagger.json';
 const endpointsFiles = ['./routes/index.js'];
