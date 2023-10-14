@@ -1,42 +1,47 @@
 // LOCALHOST 
 ### GET 
-http://localhost:8080/recipes 
+http://localhost:8080/recipes
 ### GET 
-http://localhost:8080/....
+http://localhost:8080/recipes/652af122d08ad515db13a273
 ### GET 
-http://localhost:8080/....
+http://localhost:8080/recipes/652af960d08ad515db13a275
+### GET 
+http://localhost:8080/recipes/652af99dd08ad515db13a276
+
 
 
 ### POST Create Contact 
-POST http://localhost:8080/contacts HTTP/1.1
+POST http://localhost:8080/recipes HTTP/1.1
 content-Type: application/json
 
 {
-    "firstName": "Neymar",
-    "lastName": "Galo",
-    "email": "neygalo@gmail.com",
-    "favoriteColor": "Yellow",
-    "birthday": "09/12/1970"
+  "dish name": "",
+  "prep time": "",
+  "cook time": "",
+  "yield": "",
+  "meal type": ""
 }
 
 // PRODUCTION Deploy 
 
 ### GET 
-http://localhost:8080/recipes 
+https://recipe-builder-app.onrender.com/recipes
 ### GET 
-http://localhost:8080/....
+https://recipe-builder-app.onrender.com/recipes/652af122d08ad515db13a273
 ### GET 
-http://localhost:8080/....
+https://recipe-builder-app.onrender.com/recipes/652af960d08ad515db13a275
+### GET 
+https://recipe-builder-app.onrender.com/recipes/652af99dd08ad515db13a276
 
 
 ### POST Create Contact 
-POST http://localhost:8080/contacts HTTP/1.1
+POST https://recipe-builder-app.onrender.com/recipes HTTP/1.1
 content-Type: application/json
 
 {
-    "firstName": "Neymar",
-    "lastName": "Galo",
-    "email": "neygalo@gmail.com",
-    "favoriteColor": "Yellow",
-    "birthday": "09/12/1970"
+  "dish name": "",
+  "prep time": "",
+  "cook time": "",
+  "yield": "",
+  "meal type": ""
 }
