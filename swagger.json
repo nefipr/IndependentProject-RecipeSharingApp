@@ -5,7 +5,7 @@
     "description": "Personal Assignment",
     "version": "1.0.0"
   },
-  "host": "cse341-personalnefipr.onrender.com",
+  "host": "recipe-builder-app.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
