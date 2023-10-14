@@ -8,7 +8,7 @@ const port = process.env.PORT || 8080;
 const app = express();
  
 app.get('/', (req, res) => {
-  res.send("Hello de mexico para el mundo");
+  res.send("Hello, here you will find the best Mexican Food, move to /recipes");
 });
 
 app

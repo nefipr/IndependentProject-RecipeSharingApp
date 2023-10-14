@@ -32,5 +32,39 @@ const getSingle = async (req, res, next) => {
 };
 
 
+const createNewRecipe = async(req, res) => {
+  try{
+    const newContact = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      favoriteColor: req.body.favoriteColor,
+      birthday: req.body.birthday
+    };
+    const result = await mongodb
+    .getDb()
+    .db()
+    .collection('recipes')
+    .insertOne(newContact);
+  
+    if (result.acknowledged){
+      res.status(201).json(result);
+    } else {
+      res.status(500).json(result.error);
+    }
+    } catch (error) {
+      res.status(500).json(error);
+    }
+};
 
-module.exports = { getAll, getSingle};
+const updateRecipe = async (req, res) => {
+
+};
+
+const deleteRecipe = async (req, res) => {
+
+};
+
+
+
+module.exports = { getAll, getSingle, createNewRecipe, updateRecipe, deleteRecipe};
