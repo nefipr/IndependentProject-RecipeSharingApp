@@ -19,6 +19,9 @@
     "mongodb": "^6.1.0",
     "swagger-ui-express": "^5.0.0"
   },
+  "engines": {
+    "node": ">=14 <18.17.1"
+  },
   "devDependencies": {
     "nodemon": "^3.0.1",
     "swagger-autogen": "^2.23.6"
