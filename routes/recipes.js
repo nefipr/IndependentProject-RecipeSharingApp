@@ -11,7 +11,7 @@ router.get('/:id', idValidationRules(), validate, recipesController.getSingle);
 
 router.post('/', recipeValidationRules(), validate, recipesController.createNewRecipe);
 
-router.put('/:id', idValidationRules(), recipeValidationRules(), validate,recipesController.updateRecipe);
+router.put('/:id', recipeValidationRules(), validate,recipesController.updateRecipe);
 
 router.delete('/:id', idValidationRules(), validate, recipesController.deleteRecipe);
 
