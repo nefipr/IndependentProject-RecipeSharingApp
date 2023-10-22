@@ -7,12 +7,12 @@ const recipesController = require('../controller');
 
 router.get('/', recipesController.getAll);
 
-router.get('/:id', idValidationRules(), validate, recipesController.getSingle);
+router.get('/:id', validate, recipesController.getSingle);
 
 router.post('/', recipeValidationRules(), validate, recipesController.createNewRecipe);
 
 router.put('/:id', recipeValidationRules(), validate,recipesController.updateRecipe);
 
-router.delete('/:id', idValidationRules(), validate, recipesController.deleteRecipe);
+router.delete('/:id', validate, recipesController.deleteRecipe);
 
 module.exports = router;
