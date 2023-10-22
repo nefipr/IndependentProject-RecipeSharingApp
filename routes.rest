@@ -15,7 +15,7 @@ POST http://localhost:8080/recipes HTTP/1.1
 content-Type: application/json
 
 {
-  "dishName": "Steak Tacos",
+  "dishName": "Tacos de Lengua",
   "prepTime": "10 min",
   "cookTime": "20 min",
   "yield": "12 tacos",
@@ -23,19 +23,19 @@ content-Type: application/json
 }
 
 ### PUT Update Contact 
-PUT http://localhost:8080/recipes/652af99dd08ad515db13a276 HTTP/1.1
+PUT http://localhost:8080/recipes/65347b0b98c3b875ccb08e90 HTTP/1.1
 content-Type: application/json
 
 {
-  "dishName": "",
-  "prepTime": "",
-  "cookTime": "",
-  "yield": "",
-  "mealType": ""
+  "dishName": "Tacos de Suadero",
+  "prepTime": "10 min",
+  "cookTime": "20 min",
+  "yield": "12 tacos",
+  "mealType": "Main Dish"
 }
 
 ### DELETE Update Contact 
-DELETE http://localhost:8080/recipes/652af99dd08ad515db13a276 HTTP/1.1
+DELETE http://localhost:8080/recipes/653478a938fe00bc8ad84026 HTTP/1.1
 
 
 // PRODUCTION Deploy 

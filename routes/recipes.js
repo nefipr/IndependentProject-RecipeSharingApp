@@ -1,3 +1,5 @@
+const { recipeValidationRules, idValidationRules, validate } = require('../validation')
+
 const express = require('express');
 const router = express.Router();
 
@@ -5,12 +7,12 @@ const recipesController = require('../controller');
 
 router.get('/', recipesController.getAll);
 
-router.get('/:id', recipesController.getSingle);
+router.get('/:id', idValidationRules(), validate, recipesController.getSingle);
 
-router.post('/', recipesController.createNewRecipe);
+router.post('/', recipeValidationRules(), validate, recipesController.createNewRecipe);
 
-router.put('/:id', recipesController.updateRecipe);
+router.put('/:id', idValidationRules(), recipeValidationRules(), validate,recipesController.updateRecipe);
 
-router.delete('/:id', recipesController.deleteRecipe);
+router.delete('/:id', idValidationRules(), validate, recipesController.deleteRecipe);
 
 module.exports = router;
