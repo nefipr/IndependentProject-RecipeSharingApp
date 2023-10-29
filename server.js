@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./db/connect');
-const routes = require('./routes')
+const routes = require('./routes');
+const passport = require('passport-google-oauth2');
 const path = require('path');
 
 const port = process.env.PORT || 8080;
