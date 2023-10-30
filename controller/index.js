@@ -112,7 +112,7 @@ const deleteRecipe = async (req, res) => {
 };
 
 
-const signIn = async (req, res) => {
+const signUp = async (req, res) => {
   try{
     const newUser = {
       username: req.body.username,
@@ -174,6 +174,6 @@ module.exports = {
   createNewRecipe, 
   updateRecipe, 
   deleteRecipe, 
-  signIn, 
+  signUp, 
   logIn
 };
