@@ -112,4 +112,65 @@ const deleteRecipe = async (req, res) => {
 };
 
 
-module.exports = { getAll, getSingle, createNewRecipe, updateRecipe, deleteRecipe};
+const signIn = async (req, res) => {
+  try{
+    const newUser = {
+      name: req.body.username,
+      password: req.body.password
+    };
+
+    // Check if the username already exists in the database
+    const existingUser = await mongodb
+    .getDb()
+    .db('Recipes')
+    .collection('users')
+    .find({ name: newUser.name });
+
+    if (existingUser) {
+        res.send('User already exists. Please choose a different username.');
+    } else {
+        const result = await mongodb
+        .getDb()
+        .db('Recipes')
+        .collection('users')
+        .insertOne(newUser);
+        console.log(userdata);
+    }
+  } catch (error) {
+    res.status(500).json(error);
+  }
+
+
+
+};
+
+const logIn = async (req, res) => {
+  try {
+      const check = await collection.findOne({ name: req.body.username });
+      if (!check) {
+          res.send("User name cannot found")
+      }
+      // Compare the hashed password from the database with the plaintext password
+      const isPasswordMatch = await bcrypt.compare(req.body.password, check.password);
+      if (!isPasswordMatch) {
+          res.send("wrong Password");
+      }
+      else {
+          res.render("home");
+      }
+  }
+  catch {
+      res.send("wrong Details");
+  }
+};
+
+
+module.exports = { 
+  getAll, 
+  getSingle, 
+  createNewRecipe, 
+  updateRecipe, 
+  deleteRecipe, 
+  signIn, 
+  logIn
+};

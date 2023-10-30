@@ -13,16 +13,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/static/index.html'));
 });
 
-
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, '/static/login.html'));
-});
-
-
-app.get('/signup', (req, res) => {
-  res.sendFile(path.join(__dirname, '/static/signup.html'));
-});
-
 app
   .use(bodyParser.json())
   .use((req, res, next) => {

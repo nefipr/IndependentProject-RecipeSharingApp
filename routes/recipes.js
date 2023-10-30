@@ -1,4 +1,4 @@
-const { recipeValidationRules, idValidationRules, validate } = require('../validation')
+const { recipeValidationRules, validate } = require('../validation')
 
 const express = require('express');
 const router = express.Router();
