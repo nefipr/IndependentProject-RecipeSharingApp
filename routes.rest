@@ -43,28 +43,16 @@ content-Type: application/json
   "password": "456"
 }
 
-### CREATE Update Contact 
+### POST LogIn user
+POST http://localhost:8080/login/ HTTP/1.1
+content-Type: application/json
 
+{
+  "username": "Ema Esteves",
+  "password": "456"
+}
 
-### DELETE Update Contact 
-
-### DELETE Update Contact 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // PRODUCTION Deploy 
 

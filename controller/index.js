@@ -1,5 +1,6 @@
 const { response } = require('express');
 const mongodb = require('../db/connect');
+const bcrypt = require('bcrypt');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
@@ -127,8 +128,14 @@ const signUp = async (req, res) => {
     .findOne({ username: newUser.username });
 
     if (existingUser) {
-        res.send('User already exists. Please choose a different username.');
+      res.send('User already exists. Please choose a different username.');
     } else {
+        // Number of salt rounds for bcrypt
+        const saltRounds = 10; 
+        const hashedPassword = await bcrypt.hash(newUser.password, saltRounds);
+        // Replace the original password with the hashed one
+        newUser.password = hashedPassword; 
+
         const result = await mongodb
         .getDb()
         .db('Recipes')
@@ -149,21 +156,28 @@ const signUp = async (req, res) => {
 
 const logIn = async (req, res) => {
   try {
-      const check = await collection.findOne({ name: req.body.username });
-      if (!check) {
-          res.send("User name cannot found")
-      }
-      // Compare the hashed password from the database with the plaintext password
-      const isPasswordMatch = await bcrypt.compare(req.body.password, check.password);
-      if (!isPasswordMatch) {
-          res.send("wrong Password");
-      }
-      else {
-          res.render("home");
-      }
+    const check = await mongodb
+    .getDb()
+    .db('Recipes')
+    .collection('users')
+    .findOne({ username: req.body.username });
+
+    if (!check) {
+      res.send("User name cannot found")
+    }
+
+    // Compare the hashed password from the database with the plaintext password
+    const passwordMatch = await bcrypt.compare(req.body.password, check.password);
+    if (!passwordMatch) {
+        res.send("wrong Password");
+    }
+    
+    else {
+      res.send("HOME");
+    }
   }
-  catch {
-      res.send("wrong Details");
+  catch (error) {
+    res.status(500).json(error);
   }
 };
 

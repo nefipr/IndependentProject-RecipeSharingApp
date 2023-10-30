@@ -21,15 +21,7 @@
         }
       }
     },
-    "/login": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/signup": {
       "post": {
         "description": "",
         "parameters": [
@@ -52,19 +44,17 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
-    "/signup": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/login": {
       "post": {
         "description": "",
         "parameters": [
