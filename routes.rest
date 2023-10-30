@@ -39,8 +39,8 @@ POST http://localhost:8080/signup/ HTTP/1.1
 content-Type: application/json
 
 {
-  "username": "Nefi perez",
-  "password": "987"
+  "username": "Ema Esteves",
+  "password": "456"
 }
 
 ### CREATE Update Contact 

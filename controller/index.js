@@ -124,9 +124,9 @@ const signUp = async (req, res) => {
     .getDb()
     .db('Recipes')
     .collection('users')
-    .find({ username: newUser.username });
+    .findOne({ username: newUser.username });
 
-    if (existingUser.username === req.body.username) {
+    if (existingUser) {
         res.send('User already exists. Please choose a different username.');
     } else {
         const result = await mongodb
