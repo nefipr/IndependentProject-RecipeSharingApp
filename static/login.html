@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"  />
+</head>
+<body>
+    <div class="content">
+      <div class="top">
+        <h1>Welcome to the kitchen Chef 👋</h1>
+      </div>
+
+      <form action="/login" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="username" placeholder="Enter your name" required autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <div class="content-bottom">
+        <p class="sign-in-text">Are you new?</p>
+        <a class="btn" href="/signup.html">Sign Up</a>
+      </div>
+
+      <!-- <script type="text/javascript" src="main.js"></script> -->
+</body>
+</html>
