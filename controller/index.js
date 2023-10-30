@@ -115,7 +115,7 @@ const deleteRecipe = async (req, res) => {
 const signIn = async (req, res) => {
   try{
     const newUser = {
-      name: req.body.username,
+      username: req.body.username,
       password: req.body.password
     };
 
@@ -124,8 +124,8 @@ const signIn = async (req, res) => {
     .getDb()
     .db('Recipes')
     .collection('users')
-    .find({ name: newUser.name });
-
+    .find({ username: newUser.username });
+    
     if (existingUser) {
         res.send('User already exists. Please choose a different username.');
     } else {
@@ -134,13 +134,16 @@ const signIn = async (req, res) => {
         .db('Recipes')
         .collection('users')
         .insertOne(newUser);
-        console.log(userdata);
+
+        if (result.acknowledged){
+          res.status(201).json(result);
+        } else {
+          res.status(500).json(result.error);
+        }
     }
   } catch (error) {
     res.status(500).json(error);
   }
-
-
 
 };
 

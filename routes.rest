@@ -10,7 +10,7 @@ http://localhost:8080/recipes/652af99dd08ad515db13a276
 
 
 
-### POST Create Contact 
+### POST Create Recipe 
 POST http://localhost:8080/recipes HTTP/1.1
 content-Type: application/json
 
@@ -22,7 +22,7 @@ content-Type: application/json
   "mealType": "Main Dish"
 }
 
-### PUT Update Contact 
+### PUT Update Recipe 
 PUT http://localhost:8080/recipes/65347b0b98c3b875ccb08e90 HTTP/1.1
 content-Type: application/json
 
@@ -34,8 +34,36 @@ content-Type: application/json
   "mealType": "Main Dish"
 }
 
+### POST Create User 
+POST http://localhost:8080/signup HTTP/1.1
+content-Type: application/json
+
+{
+  "username": "Nefi Perez",
+  "password": "Machacado"
+}
+
+### CREATE Update Contact 
+
+
 ### DELETE Update Contact 
-DELETE http://localhost:8080/recipes/653478a938fe00bc8ad84026 HTTP/1.1
+
+### DELETE Update Contact 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // PRODUCTION Deploy 
