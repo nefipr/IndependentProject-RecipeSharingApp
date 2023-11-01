@@ -3,6 +3,7 @@ const mongodb = require('../db/connect');
 const bcrypt = require('bcrypt');
 const ObjectId = require('mongodb').ObjectId;
 
+
 const getAll = async (req, res, next) => {
   try{
   const result = await mongodb.getDb().db('Recipes').collection('recipes').find();
@@ -144,6 +145,7 @@ const signUp = async (req, res) => {
 
         if (result.acknowledged){
           res.status(201).json(result);
+          // res.redirect('/recipes');
         } else {
           res.status(500).json(result.error);
         }
@@ -163,7 +165,7 @@ const logIn = async (req, res) => {
     .findOne({ username: req.body.username });
 
     if (!check) {
-      res.send("User name cannot found")
+      res.send("Username cannot found")
     }
 
     // Compare the hashed password from the database with the plaintext password
