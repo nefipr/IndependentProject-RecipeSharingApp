@@ -1,14 +1,20 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express');
 const router = express.Router();
+
 
 const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
 
+const oauthSecret = process.env.OAUTH_SECRET;
+
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'recipe-builder-app.onrender.com',
+  secret: oauthSecret,
+  baseURL: 'https://recipe-builder-app.onrender.com',
   clientID: 'HnroyG2pTLipFxYdbeDPiLze9BoZIoKT',
   issuerBaseURL: 'https://dev-aequs7zjla5588in.us.auth0.com'
 };
