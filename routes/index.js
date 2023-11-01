@@ -8,7 +8,7 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'http://localhost:8080',
+  baseURL: 'recipe-builder-app.onrender.com',
   clientID: 'HnroyG2pTLipFxYdbeDPiLze9BoZIoKT',
   issuerBaseURL: 'https://dev-aequs7zjla5588in.us.auth0.com'
 };
