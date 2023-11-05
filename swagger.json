@@ -41,7 +41,7 @@
         }
       }
     },
-    "/user/signup": {
+    "/user/newslettersignup": {
       "post": {
         "description": "",
         "parameters": [
@@ -51,7 +51,13 @@
             "schema": {
               "type": "object",
               "properties": {
+                "email": {
+                  "example": "any"
+                },
                 "username": {
+                  "example": "any"
+                },
+                "birthDate": {
                   "example": "any"
                 },
                 "password": {
@@ -68,35 +74,8 @@
           "201": {
             "description": "Created"
           },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/user/login": {
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "username": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
+          "400": {
+            "description": "Bad Request"
           },
           "500": {
             "description": "Internal Server Error"

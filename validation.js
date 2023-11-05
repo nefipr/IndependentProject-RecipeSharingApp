@@ -15,6 +15,19 @@ const recipeValidationRules = () => {
   ]
 }
 
+const newsletterValidationRules = () => {
+  return [
+    // email is required
+    check('email', 'email must be an email').isEmail(),
+    // username is required
+    check('username', 'username is required').notEmpty(),
+    // birthDate is required
+    check('birthDate', 'birthDate must be a date').isDate(),
+    // password is required
+    check('password', 'password is required').notEmpty(),
+  ]
+}
+
 const chefValidationRules = () => {
   return [
     // chefName is required
@@ -51,5 +64,6 @@ const validate = (req, res, next) => {
 module.exports = {
     recipeValidationRules,
     validate,
-    chefValidationRules
+    chefValidationRules,
+    newsletterValidationRules
 }

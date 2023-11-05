@@ -117,7 +117,9 @@ const deleteRecipe = async (req, res) => {
 const signUp = async (req, res) => {
   try{
     const newUser = {
+      email: req.body.email,
       username: req.body.username,
+      birthDate: req.body.birthDate,
       password: req.body.password
     };
 
@@ -126,10 +128,10 @@ const signUp = async (req, res) => {
     .getDb()
     .db('Recipes')
     .collection('users')
-    .findOne({ username: newUser.username });
+    .findOne({ email: newUser.email });
 
     if (existingUser) {
-      res.send('User already exists. Please choose a different username.');
+      res.send('User already exists. Please register a different email.');
     } else {
         // Number of salt rounds for bcrypt
         const saltRounds = 10; 
@@ -156,32 +158,32 @@ const signUp = async (req, res) => {
 
 };
 
-const logIn = async (req, res) => {
-  try {
-    const check = await mongodb
-    .getDb()
-    .db('Recipes')
-    .collection('users')
-    .findOne({ username: req.body.username });
+// const logIn = async (req, res) => {
+//   try {
+//     const check = await mongodb
+//     .getDb()
+//     .db('Recipes')
+//     .collection('users')
+//     .findOne({ username: req.body.username });
 
-    if (!check) {
-      res.send("Username cannot found")
-    }
+//     if (!check) {
+//       res.send("Username cannot found")
+//     }
 
-    // Compare the hashed password from the database with the plaintext password
-    const passwordMatch = await bcrypt.compare(req.body.password, check.password);
-    if (!passwordMatch) {
-        res.send("wrong Password");
-    }
+//     // Compare the hashed password from the database with the plaintext password
+//     const passwordMatch = await bcrypt.compare(req.body.password, check.password);
+//     if (!passwordMatch) {
+//         res.send("wrong Password");
+//     }
     
-    else {
-      res.send("HOME");
-    }
-  }
-  catch (error) {
-    res.status(500).json(error);
-  }
-};
+//     else {
+//       res.send("HOME");
+//     }
+//   }
+//   catch (error) {
+//     res.status(500).json(error);
+//   }
+// };
 
 
 module.exports = { 
@@ -191,5 +193,5 @@ module.exports = {
   updateRecipe, 
   deleteRecipe, 
   signUp, 
-  logIn
+  // logIn
 };
