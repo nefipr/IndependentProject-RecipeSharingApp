@@ -9,6 +9,9 @@ const port = process.env.PORT || 8080;
 const app = express();
 
 // app.use(express.static('static'));
+// app.get('/', (req, res) => {
+//   res.send("Hello, here you will find the best Mexican Food, move to /recipes");
+// });
 
 app
   .use(bodyParser.json())
@@ -16,6 +19,7 @@ app
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
   })
+  
   // .get('/', (req, res) => {
   //   res.sendFile(path.join(__dirname, '/static/index.html'));
   // })

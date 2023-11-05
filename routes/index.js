@@ -24,7 +24,7 @@ router.use(auth(config));
 
 // req.isAuthenticated is provided from the auth router
 router.get('/', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+  res.send(req.oidc.isAuthenticated() ? 'Hello, here you will find the best Mexican Food, move to /recipes' : 'Logged out. Type /login to access the Recipe Book');
 });
 
 
