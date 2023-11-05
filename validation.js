@@ -22,7 +22,7 @@ const newsletterValidationRules = () => {
     // username is required
     check('username', 'username is required').notEmpty(),
     // birthDate is required
-    check('birthDate', 'birthDate must be a date').isDate(),
+    check('birthDate', 'birthDate must be a date YYYY/MM/DD').isDate(),
     // password is required
     check('password', 'password is required').notEmpty(),
   ]
