@@ -57,7 +57,7 @@ const addNewChef = async (req, res) => {
           const result = await mongodb
           .getDb()
           .db('Recipes')
-          .collection('users')
+          .collection('chefs')
           .insertOne(newChef);
   
           if (result.acknowledged){
