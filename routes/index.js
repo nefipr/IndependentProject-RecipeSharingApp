@@ -34,8 +34,8 @@ router.get('/profile', requiresAuth(), (req, res) => {
 
 
 router.use('/', require('./swagger'));
-router.use('/', require('./users'));
-router.use('/', require('./chefs'));
+router.use('/user', require('./users'));
+router.use('/chefs', require('./chefs'));
 router.use('/recipes', requiresAuth(), require('./recipes'))
 
 module.exports = router;
