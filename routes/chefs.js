@@ -1,4 +1,4 @@
-const { recipeValidationRules, validate } = require('../validation')
+const { chefValidationRules, validate } = require('../validation')
 
 const router = require('express').Router();
 
@@ -7,12 +7,12 @@ const usersController = require('../controller/chefController');
 
 router.get('/', usersController.getAllChefs);
 
-router.get('/:id', usersController.getSingleChef);
+router.get('/:id', validate, usersController.getSingleChef);
 
-router.post('/', usersController.addNewChef);
+router.post('/', chefValidationRules(), validate, usersController.addNewChef);
 
-router.put('/:id', usersController.updateChefInfo);
+router.put('/:id', chefValidationRules(), validate, usersController.updateChefInfo);
 
-router.delete('/:id', usersController.deleteChef);
+router.delete('/:id', validate, usersController.deleteChef);
 
 module.exports = router;

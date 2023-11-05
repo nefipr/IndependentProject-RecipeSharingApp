@@ -15,6 +15,25 @@ const recipeValidationRules = () => {
   ]
 }
 
+const chefValidationRules = () => {
+  return [
+    // chefName is required
+    check('chefName', 'chefName is required').notEmpty(),
+    // chefRestaurant is required
+    check('chefRestaurant', 'chefRestaurant is required').notEmpty(),
+    // chefSpecialization is required
+    check('chefSpecialization', 'chefSpecialization is required').notEmpty(),
+    // experienceLevel is required
+    check('experienceLevel', 'experienceLevel is required').notEmpty(),
+    // signatureDishes is required
+    check('signatureDishes', 'signatureDishes is required').notEmpty(),
+    // chefRating is required
+    check('chefRating', 'chefRating is required').notEmpty(),
+    // contactInformation is required
+    check('contactInformation', 'contactInformation is required').notEmpty(),        
+  ]
+}
+
 
 const validate = (req, res, next) => {
   const errors = validationResult(req)
@@ -32,4 +51,5 @@ const validate = (req, res, next) => {
 module.exports = {
     recipeValidationRules,
     validate,
+    chefValidationRules
 }
