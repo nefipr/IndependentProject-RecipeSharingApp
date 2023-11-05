@@ -28,14 +28,13 @@ router.get('/', (req, res) => {
 });
 
 
-
 router.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user));
 });
 
 
 router.use('/', require('./swagger'))
-// router.use('/', require('./users'))
+router.use('/', require('./users'))
 router.use('/recipes', requiresAuth(), require('./recipes'))
 
 module.exports = router;
