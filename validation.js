@@ -15,13 +15,6 @@ const recipeValidationRules = () => {
   ]
 }
 
-const idValidationRules = () => {
-    return [
-      // Receip id is required
-      check('recipeId', 'recipeId is required').notEmpty(),
-    ]
-  }
-
 
 const validate = (req, res, next) => {
   const errors = validationResult(req)
@@ -38,6 +31,5 @@ const validate = (req, res, next) => {
 
 module.exports = {
     recipeValidationRules,
-    idValidationRules,
     validate,
 }
